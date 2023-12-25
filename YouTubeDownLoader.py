@@ -12,8 +12,9 @@ def start_Download():
 
         title.configure(text=ytObject.title, text_color= "white")
         finishLabel.configure(text="")
-        video.download()
+        video.download('E:\Python codes\Python_downloaded_videos')
         finishLabel.configure(text="Downloaded!")
+        link.delete(0, 'end')
     except:
         finishLabel.configure(text="Download Error", text_color= "red")
 
@@ -42,7 +43,7 @@ customtkinter.set_default_color_theme("blue")
 
 # App frame
 app = customtkinter.CTk()
-app.geometry("720x480")
+app.geometry("500x300")
 app.title("YouTube Downloader")
 
 # Adding UI elements
@@ -71,7 +72,7 @@ download = customtkinter.CTkButton(app, text= "Download", command=start_Download
 download.pack(padx=10, pady= 10)
 
 # Adding appearance customization
-options = ["Light", "Dark"]
+options = ["Dark", "Light"]
 optionMenu = customtkinter.CTkOptionMenu(app, values=options, height= 30, width= 70, command= optionmenu_callback)
 optionMenu.place(relx = 1, rely= 0, x = -4, y = 4, anchor= NE)
 
