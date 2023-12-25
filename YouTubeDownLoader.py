@@ -43,10 +43,12 @@ customtkinter.set_default_color_theme("blue")
 
 # App frame
 app = customtkinter.CTk()
-app.geometry("500x300")
+app.geometry("600x400")
 app.title("YouTube Downloader")
 
 # Adding UI elements
+emptySpace = customtkinter.CTkLabel(app, text="")
+emptySpace.pack(pady=25)
 title = customtkinter.CTkLabel(app, text= "Insert a youtube link", font= ("Arial",14))
 title.pack(padx= 10, pady= 20)
 
